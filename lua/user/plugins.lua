@@ -98,6 +98,23 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
+  -- Rust
+  use "rust-lang/rust.vim"
+  use "rhysd/rust-doc.vim"
+  use {"neoclide/coc.nvim", branch = 'release'}
+  use "simrat39/rust-tools.nvim"
+  -- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+  local servers = { 'rust_analyzer' }
+  for _, lsp in pairs(servers) do
+    require('lspconfig')[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      -- This will be the default in neovim 0.7+
+      debounce_text_changes = 150,
+    }
+  }
+end
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
