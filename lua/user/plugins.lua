@@ -114,10 +114,17 @@ return packer.startup(function(use)
       debounce_text_changes = 150,
     }
   }
-end
+  end
+
+ vim.cmd[[
+    highlight FgCocErrorFloatBgCocFloating ctermbg=white ctermfg=red
+    highlight Pmenu ctermbg=146 ctermfg=black
+    highlight PmenuSel ctermbg=black ctermfg=white
+ ]]
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
+ if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
-end)
+ end)
