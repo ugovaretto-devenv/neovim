@@ -1,3 +1,5 @@
 require("settings")
 require("user/plugins")
-vim.cmd('source coc-settings.vim')
+vim.cmd('source  $HOME/.config/nvim/coc-settings.vim')
+
+
