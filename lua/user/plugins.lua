@@ -125,8 +125,6 @@ return packer.startup(function(use)
   --    highlight PmenuSel ctermbg=black ctermfg=white
   --    set termguicolors
   --]]
-  vim.cmd([[set termguicolors
-           vnoremap // y/<C-R>=escape(@",'/\')<CR><CR> ]])
   require('lualine').setup()
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
